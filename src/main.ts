@@ -1,18 +1,14 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import setupPlugins from "@/plugins";
+import './assets/main.css'
 
-// 本地SVG图标
-import "virtual:svg-icons-register";
-// 暗黑主题样式
-import "element-plus/theme-chalk/dark/css-vars.css";
-// 暗黑模式自定义变量
-import "@/styles/dark/css-vars.css";
-import "@/styles/index.scss";
-import "uno.css";
-import "animate.css";
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 
-const app = createApp(App);
-// 注册插件
-app.use(setupPlugins);
-app.mount("#app");
+import App from './App.vue'
+import router from './router'
+
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')
